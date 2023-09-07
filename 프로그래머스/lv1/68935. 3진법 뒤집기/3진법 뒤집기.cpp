@@ -7,13 +7,13 @@ using namespace std;
 int solution(int n) {
     int answer = 0;
     int j = 0;
-    string str ="";
+    vector <int> str;
     while(n!=0){
-        str += (n % 3);
+        str.push_back(n % 3);
         n = n / 3;
     }
 
-    for(int i = str.length() -1 ;i>-1;i--){
+    for(int i = str.size() -1 ;i>-1;i--){
         answer += str[i] * pow(3,j);
         j++;
     }
