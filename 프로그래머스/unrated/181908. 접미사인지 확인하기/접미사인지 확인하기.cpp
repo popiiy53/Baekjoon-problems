@@ -3,6 +3,12 @@
 
 using namespace std;
 
-int solution(string my_string, string is_suffix) {      
-    return is_suffix.size() > my_string.size() ? 0 : my_string.substr(my_string.size() - is_suffix.size(), is_suffix.size()) == is_suffix ? 1 : 0;
+int solution(string my_string, string is_suffix) {
+
+    for(int i = 0; i < my_string.size(); i++){
+        string suffix = my_string.substr(i); 
+        if(suffix == is_suffix) 
+            return 1;
+    }
+    return 0;
 }
